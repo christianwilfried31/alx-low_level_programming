@@ -1,26 +1,42 @@
 #include "main.h"
 
 /**
- * puts_half - prints half of the string
- *@str: string being tested
+ *_strlen - counts string length
  *
+ *@s: string pointer variable
+ *
+ *Return: i;
+ */
+
+int _strlen(char *s)
+{
+	int i = 0;
+
+	while (s[i] != '\0')
+		i++;
+
+	return (i);
+}
+/**
+ * puts_half - prints half of a string
+ *
+ * @str: string pointer variable
  */
 
 void puts_half(char *str)
 {
-	int ct, even, neg;
+	int i, c, n;
 
-	for (ct = 0; str[ct] != '\0'; ct++)
-		;
-	if ((ct % 2) == 0)
-	{
-		for (even = ct / 2; str[even] != '\0'; even++)
-			_putchar(str[even]);
-	}
+	c = _strlen(str);
+
+	if (c % 2 == 0)
+		n = c / 2;
 	else
+		n = (c + 1) / 2;
+
+	for (i = n; i < c; i++)
 	{
-		for (neg = (ct - 1) / 2; str[neg] != '\0'; neg++)
-			_putchar(str[neg + 1]);
+		_putchar(*(str + i));
 	}
 	_putchar('\n');
 }
