@@ -1,0 +1,1 @@
+(1)Scripts about Pointers, arrays and strings(2)
