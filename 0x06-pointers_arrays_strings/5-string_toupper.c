@@ -1,18 +1,22 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
- * main - check the code
+ **string_toupper - chages string letters to uppercase
  *
- * Return: Always 0.
+ *@s: string to change
+ *
+ *Return: pointer to the changed string
  */
-int main(void)
-{
-    char str[] = "Look up!\n";
-    char *ptr;
 
-    ptr = string_toupper(str);
-    printf("%s", ptr);
-    printf("%s", str);
-    return (0);
+char *string_toupper(char *s)
+{
+	int i;
+
+	for (i = 0; s[i]; i++)
+	{
+		if (s[i] >= 97 && s[i] <= 122)
+			s[i] += (65 - 97);
+	}
+
+	return (s);
 }
