@@ -1,0 +1,1 @@
+(1)String pointers arrays(2)
